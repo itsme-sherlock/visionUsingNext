@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.custom-span {
+    
+  color: #D4AF37; /* Example color */
+  font-size: 30px;
+  font-weight: bold;
+}
