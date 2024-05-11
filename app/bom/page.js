@@ -7,6 +7,7 @@ import clubHouse from '../../public/assets/club house.png';
 import WhyVision from "../components/bom page/WhyVision";
 import WhoBenefits from "../components/bom page/WhoBenefits/WhoBenefits";
 import VideoTemplate from "../components/bom page/VideoTemplate";
+import ContactForm from "../components/ContactForm";
 
 export default function bom(){
   const details = [
@@ -100,6 +101,7 @@ export default function bom(){
             <Button content={"Contact us"} onClick={handleContactUsClick} />
             <WhoBenefits slides={slides}/>
             <VideoTemplate videos={videos}/>
+            <ContactForm minimalForm={false}/>
       
         </div>
     )

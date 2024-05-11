@@ -38,7 +38,7 @@ export async function POST(request) {
       range: 'A:A', // Append to the first available row in column A
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[name, email, gender, phone, age, area, occupation, other]],
+        values: [[name, email, gender, age,area,phone, occupation, other]],
       },
     });
     console.log("Google Sheets API response:", response.data);
@@ -51,7 +51,7 @@ export async function POST(request) {
     }
 
     // Display the data sent to Google Sheets
-    console.log("Data sent to Google Sheets:", { name, email, gender, phone, age, area, occupation, other });
+    console.log("Data sent to Google Sheets:", { name, email, gender, age, area,phone, occupation, other });
 
     return new Response(200, {
       headers: { 'Content-Type': 'application/json' },

@@ -3,12 +3,11 @@ import React, { useState } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-function ContactForm() {
+function ContactForm({ minimalForm }) {
   const [submitForm, setSetsubmitForm] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    
     gender: "male", // Default value for gender
     phone: "", // Default value for phone
     other: "",
@@ -91,6 +90,17 @@ function ContactForm() {
           
           // className=
         />
+               {/* phone */}
+               <input
+          type="number"
+          name="phone"
+          id="phone"
+          placeholder="Mobile Number"
+          value={formData.phone}
+          onChange={handleChange}
+          className={inputStyle}
+           
+        />
         {/* email */}
         <input
           type="email"
@@ -101,7 +111,9 @@ function ContactForm() {
           className={inputStyle}
            
         />
-        {/* gender */}
+         {!minimalForm && (
+          <>
+          {/* gender */}
         <div className="flex items-center gap-2">
           <input
             type="radio"
@@ -146,17 +158,7 @@ function ContactForm() {
           className={inputStyle}
            
         />
-        {/* phone */}
-        <input
-          type="number"
-          name="phone"
-          id="phone"
-          placeholder="Mobile Number"
-          value={formData.phone}
-          onChange={handleChange}
-          className={inputStyle}
-           
-        />
+ 
         {/* Dropdown for occupation */}
         <select
           name="occupation"
@@ -197,6 +199,9 @@ function ContactForm() {
             </AnimatePresence>
           </motion.div>
         )}
+          </>
+        )}
+        
         {submitForm && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

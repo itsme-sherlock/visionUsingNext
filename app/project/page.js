@@ -1,4 +1,5 @@
 'use client'
+import ContactForm from "../components/ContactForm";
 import VideoSection from "../components/bom page/VideoSection";
 import VideoTemplate from "../components/bom page/VideoTemplate";
 import WhoBenefits from "../components/bom page/WhoBenefits/WhoBenefits";
@@ -47,17 +48,18 @@ export default function Project(){
           The demand for sustainable, high-quality wood is on the rise. Your redwood trees could be a sought-after resource for eco-conscious industries, ensuring a consistent revenue stream.`
         },
       ];
+
       const videos = [
         {
-          src: "https://www.youtube.com/embed/aInhxNh8aB8",
+          src: "https://www.youtube.com/embed/EyXsg6w35KI",
           title: "HouseHold Worker To Realtor | Successful Journey ",
         },
         {
-          src: "https://www.youtube.com/embed/r9LPajesVCE",
+          src: "https://www.youtube.com/embed/nFODZpS0er0",
           title: "Flight In-charge To Successful Realtor | #VisionStories | Business Journey",
         },
         {
-          src: "https://www.youtube.com/embed/D3Q9sZ1m3N8",
+          src: "https://www.youtube.com/embed/SxhuGJfsRQ4",
           title: "Bike Taxi Driver to Successful Realtor | #VisionStories | Business Journey",
         },
       ];
@@ -95,8 +97,8 @@ export default function Project(){
             <Button content={"Book Your Dream Forest For Just 10,000 RS"} onClick={handleContactUsClick} />
             <WhyVision />
             <Button content={"Book Your Dream Forest For Just 10,000 RS"} onClick={handleContactUsClick} />
-            <WhoBenefits slides={slides}/>
             <VideoTemplate videos={videos}/>
+            <ContactForm minimalForm={true}/>
         </div>
     )
 }
