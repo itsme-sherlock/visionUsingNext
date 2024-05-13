@@ -32,13 +32,14 @@ export async function POST(request) {
     const sheets = google.sheets({ auth, version: 'v4' });
 
     // Write data to Google Sheet
+    const currentDate = new Date().toISOString().split('T')[0];
     console.log("Writing data to Google Sheet");
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
       range: 'A:A', // Append to the first available row in column A
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[name, email, gender, age,area,phone, occupation, other]],
+        values: [[name, email, gender, age,area,phone, occupation, other,currentDate]],
       },
     });
     console.log("Google Sheets API response:", response.data);

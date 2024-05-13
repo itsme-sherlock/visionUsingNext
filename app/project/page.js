@@ -66,20 +66,32 @@ export default function Project(){
       const slides = [
 
         {
-          heading: "Aspiring Real Estate Professionals",
-          content: `deal for individuals with a passion for real estate looking to kickstart their career.                                  `,
+          heading: "Clubhouse",
+          content: `Designed as an ideal homestay, the Clubhouse offers a cozy retreat for a family of six. With thoughtful amenities and spacious accommodations, it promises a comfortable and enjoyable stay experience..                                  `,
         },
         {
-          heading: "Career Seekers",
-          content: `Those in search of a rewarding and impactful profession.
-          Guidance Seekers: Individuals who value personalized mentorship and guidance from a seasoned real estate expert.`,
+          heading: "Near NHW",
+          content: `Situated within a 3 km radius from major National Highways, the location provides convenient accessibility to key transportation routes, ensuring easy travel and connectivity for residents and businesses.`,
         },
         {
-          heading: "Newbies to Real Estate",
+          heading: "Gunman Security",
           content:
-            `Tailored for those new to the field, providing a fast-track to success.
-            Freelancers: Suited for those desiring the flexibility and autonomy of a freelance career.
-            Career Explorers: Perfect for individuals confused about their career path or future direction.`,
+            `We offer round-the-clock Gunman Security services, safeguarding for all properties. Our dedicated team ensures constant protection, enhancing security and peace of mind for clients at all times.`,
+        },
+        {
+          heading: "Solar Fencing",
+          content:
+            `Our services include the installation of solar fencing systems. This advanced technology enhances security by utilizing solar power to electrify fences, effectively deterring intruders and ensuring safety.`,
+        },
+        {
+          heading: "CCTV",
+          content:
+            `We offer comprehensive CCTV facilities, bolstering surveillance and safety. Our state-of-the-art cameras and monitoring systems provide continuous coverage, deterring potential threats and enhancing security across various environments.`,
+        },
+        {
+          heading: "Accessibility",
+          content:
+            `Conveniently situated within a 30 km radius of Trichy city's airport and railway station, the property offers easy access to major transportation hubs, ensuring seamless travel connections for residents and visitors.`,
         },
         
       ];
@@ -97,6 +109,7 @@ export default function Project(){
             <Button content={"Book Your Dream Forest For Just 10,000 RS"} onClick={handleContactUsClick} />
             <WhyVision />
             <Button content={"Book Your Dream Forest For Just 10,000 RS"} onClick={handleContactUsClick} />
+            <WhoBenefits slides={slides}/>
             <VideoTemplate videos={videos}/>
             <ContactForm minimalForm={true}/>
         </div>

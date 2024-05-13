@@ -8,9 +8,9 @@ function ContactForm({ minimalForm }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    gender: "male", // Default value for gender
+    gender: "male",
     phone: "", // Default value for phone
-    other: "",
+    occupation: "",
   });
 
   const handleChange = (e) => {
@@ -146,6 +146,7 @@ function ContactForm({ minimalForm }) {
           placeholder="Age"
           value={formData.age}
           className={inputStyle}
+          onChange={handleChange}
            
         />
         {/* area */}
@@ -156,6 +157,7 @@ function ContactForm({ minimalForm }) {
           placeholder="Area in Chennai"
           value={formData.area}
           className={inputStyle}
+          onChange={handleChange}
            
         />
  
@@ -194,6 +196,7 @@ function ContactForm({ minimalForm }) {
                   placeholder="please enter your occupation"
                   value={formData.other}
                   className={inputStyle}
+                  onChange={handleChange}
                 />
               </div>
             </AnimatePresence>
