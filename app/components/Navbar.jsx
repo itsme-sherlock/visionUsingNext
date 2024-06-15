@@ -7,6 +7,8 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -17,41 +19,66 @@ const Navbar = () => {
   };
 
   const handleDesktopMenuClick = (e) => {
-    // Stop event propagation to prevent opening the hamburger menu
     e.stopPropagation();
     closeMenu();
   };
 
-  // Define menu items
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const toggleMobileDropdown = () => {
+    setIsMobileDropdownOpen(!isMobileDropdownOpen);
+  };
+
   const menuItems = [
     { title: "Home", path: "/" },
     { title: "Projects", path: "/project" },
     { title: "Bom Page", path: "/bom" },
-    // Add additional menu items as needed
+  ];
+
+  const dropdownItems = [
+    { title: "Redwood Farms", path: "/project" },
+    { title: "Green Meadows", path: "/green-meadows" },
   ];
 
   return (
     <section>
       <div className="w-full h-20 bg-visionBlue">
-        {/* logo and links */}
         <div className="flex h-full items-center justify-center sm:justify-between px-5">
-          {/* logo */}
           <Image className="sm:w-[12%] w-[30%]" src={logo} alt="logo" />
-
-          {/* links */}
           <div>
-            {/* Desktop menu */}
             <ul className="text-white sm:flex hidden items-center justify-center h-full gap-5 ">
               {menuItems.map((item, index) => (
-                <li key={index}>
-                  <Link href={item.path}>
-                    <button onClick={(e) => handleDesktopMenuClick(e)}>{item.title}</button>
-                  </Link>
+                <li key={index} className="relative">
+                  {item.title === "Projects" ? (
+                    <div>
+                      <button onMouseEnter={toggleDropdown} onClick={(e) => handleDesktopMenuClick(e)}>
+                        {item.title}
+                      </button>
+                      {isDropdownOpen && (
+                        <ul
+                          className="absolute left-0 mt-2 w-48 bg-visionBlue border border-white text-white"
+                          onMouseLeave={toggleDropdown}
+                        >
+                          {dropdownItems.map((dropdownItem, dropdownIndex) => (
+                            <li key={dropdownIndex} className="hover:bg-gray-700">
+                              <Link href={dropdownItem.path}>
+                                <button onClick={closeMenu}>{dropdownItem.title}</button>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : (
+                    <Link href={item.path}>
+                      <button onClick={(e) => handleDesktopMenuClick(e)}>{item.title}</button>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
-
-            {/* Hamburger menu button */}
             <div className="">
               <button className="sm:hidden text-white p-2 ml-auto" onClick={toggleMenu}>
                 <svg
@@ -71,8 +98,6 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-          
-          {/* Mobile menu */}
           <AnimatePresence>
             {isOpen && (
               <motion.div
@@ -84,10 +109,29 @@ const Navbar = () => {
               >
                 <ul className="text-white flex flex-col items-center justify-center h-full gap-5">
                   {menuItems.map((item, index) => (
-                    <li key={index}>
-                      <Link href={item.path}>
-                        <button onClick={closeMenu}>{item.title}</button>
-                      </Link>
+                    <li key={index} className="relative">
+                      {item.title === "Projects" ? (
+                        <div>
+                          <button onClick={toggleMobileDropdown}>
+                            {item.title}
+                          </button>
+                          {isMobileDropdownOpen && (
+                            <ul className="mt-2 w-48 bg-visionBlue border border-white text-white">
+                              {dropdownItems.map((dropdownItem, dropdownIndex) => (
+                                <li key={dropdownIndex} className="hover:bg-gray-700">
+                                  <Link href={dropdownItem.path}>
+                                    <button onClick={closeMenu}>{dropdownItem.title}</button>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ) : (
+                        <Link href={item.path}>
+                          <button onClick={closeMenu}>{item.title}</button>
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
