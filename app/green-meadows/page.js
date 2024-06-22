@@ -10,41 +10,29 @@ import clubHouse from '@/public/assets/club house.png';
 export default function green(){
     const details = [
         {
-          heading: 'Economical Investment',
+          heading: 'Schools',
           csvg: clubHouse, // Updated relative path
           content: `
-          Take advantage of redwood farming's potential to generate substantial returns on your capital. Redwoods are prized for their pricey wood, which translates to the possibility of big profits`
+          One of the standout features of this neighborhood is the abundance of quality schools in the nearby surroundings. for instance,st marys matricualtion school is just 15 min away ,goverment elementary school is just 7 min away`
         },
         {
-          heading: '1OX Returns ',
+          heading: 'Colleges ',
           csvg: clubHouse, // Updated relative path
           content: `
-          Redwood is a highly valued asset with a dramatically greater return on investment (ROI) of 1OX times.Don't purchase vacant land. purchase a piece of land with passive income
+          For those pursuing higher education or professional development, there are several esteemed colleges and universities nearby. for instance,christ arts and science college is just 5 km away.
           `
         },
         {
-          heading: 'Having a Look at Peace',
+          heading: 'Hosptials',
           csvg: clubHouse, // Updated relative path
           content: `
-          Escape the bustle of the city and spend some time in your own private redwood paradise. Imagine waking up to the tranquil sounds of wind rustling through majestic trees.`
+          When considering the purchase of a new home, one of the key aspects to evaluate is the proximity and availability of quality healthcare services. there are multiple hospitals nearer with 5-10km of radius`
         },
         {
-          heading: 'Long-Term Investment',
+          heading: 'Religious places',
           csvg: clubHouse, // Updated relative path
           content: `
-          Watch your redwood trees grow over time, potentially producing both personal fulfillment and an attractive financial future.`
-        },
-        {
-          heading: 'Eco-Friendly Profits',
-          csvg: clubHouse, // Updated relative path
-          content: `
-          Your investment isn't just about financial gain; it's about making a positive impact. Generate income while contributing to reforestation and environmental well-being..
-           .`
-        },
-        {
-          heading: 'Growing Demand',
-          content: `
-          The demand for sustainable, high-quality wood is on the rise. Your redwood trees could be a sought-after resource for eco-conscious industries, ensuring a consistent revenue stream.`
+          his property is surrounded by a variety of religious places that enrich the communitys cultural tapestry. Within close proximity, you'll find serene temples, peaceful churches, and welcoming mosques`
         },
       ];
 
@@ -105,12 +93,13 @@ export default function green(){
       };
     return(
         <div>
-            <VideoSection src={"https://www.youtube.com/embed/BHIdfB_QE4c"} />
-            <Button content={"Book Your Dream Forest For Just 10,000 RS"} onClick={handleContactUsClick} />
+          
+            <VideoSection src={"https://www.youtube.com/embed/TnOGWUy93zI"} />
+            <Button content={"Book Your Dream plot For Just 10,000 RS"} onClick={handleContactUsClick} />
             <Features details={details}/>
-            <Button content={"Book Your Dream Forest For Just 10,000 RS"} onClick={handleContactUsClick} />
+            <Button content={"Book Your Dream plot For Just 10,000 RS"} onClick={handleContactUsClick} />
             <WhyVision />
-            <Button content={"Book Your Dream Forest For Just 10,000 RS"} onClick={handleContactUsClick} />
+            <Button content={"Book Your Dream plot For Just 10,000 RS"} onClick={handleContactUsClick} />
             <WhoBenefits slides={slides}/>
             <VideoTemplate videos={videos}/>
             <ContactForm minimalForm={true}/>
