@@ -1,5 +1,6 @@
 import React from "react";
-import whyLogo from "@/public/assets/whyLogo.png";
+import Image from 'next/image';
+import whyLogo from '@/public/assets/whyLogo.png';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -15,7 +16,7 @@ const WhyVision = () => {
       <div className="sm:flex py-10 sm:pl-10 items-center">
         {/* left */}
         <div>
-          <h1 className="text-3xl sm:text-6xl font-bold text-visionBlue sm:text-left text-center">Why choose Vision</h1>
+          <h1 className="text-3xl sm:text-6xl font-bold text-visionBlue sm:text-left text-center">Why choose Vista</h1>
           <div className="flex flex-wrap overflow-x-scroll sm:overflow-hidden px-20 sm:px-4">
               <ul  className="flex flex-col sm:grid gap-16 pt-16 text-xs sm:text-xl">
                 <motion.li ref={ref}
@@ -47,7 +48,7 @@ const WhyVision = () => {
         </div>
         {/* right */}
         <div className="hidden sm:flex">
-          <img src={whyLogo} alt="logo"></img>
+          <Image src={whyLogo} alt="logo"></Image>
         </div>
       </div>
     </section>

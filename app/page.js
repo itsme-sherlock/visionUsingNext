@@ -10,7 +10,7 @@ export default function Home() {
   return(
   <div>
     <Head>
-        <title>Vision Properties</title>
+        <title>Vista Properties</title>
         <meta name="description" content="Your one-stop destination for finding your dream property in Tamilnadu. We are a team of expert real estate agents dedicated to helping our clients find the perfect property that matches their needs and budget." key="desc" />
         <meta property="og:title" content="Your one-stop destination for finding your dream property in Tamilnadu. We are a team of expert real estate agents dedicated to helping our clients find the perfect property that matches their needs and budget." />
         <meta

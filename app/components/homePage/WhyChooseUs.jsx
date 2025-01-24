@@ -1,5 +1,5 @@
 import React from "react";
-import whyLogo from '@/public/assets/whyLogo.png'
+import whyLogo from '@/public/assets/whyLogo.png';
 import Image from "next/image";
 
 const WhyChooseUs = () => {

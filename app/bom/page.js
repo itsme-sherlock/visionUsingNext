@@ -100,7 +100,7 @@ export default function bom(){
             <WhyVision />
             <Button content={"Contact us"} onClick={handleContactUsClick} />
             <WhoBenefits slides={slides}/>
-            <VideoTemplate videos={videos}/>
+            {/* <VideoTemplate videos={videos}/> */}
             <ContactForm minimalForm={false}/>
       
         </div>

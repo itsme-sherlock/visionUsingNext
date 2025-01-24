@@ -33,7 +33,7 @@ const Navbar = () => {
 
   const menuItems = [
     { title: "Home", path: "/" },
-    { title: "Projects", path: "/project" },
+    // { title: "Projects", path: "/project" },
     { title: "Bom Page", path: "/bom" },
   ];
 
@@ -46,7 +46,7 @@ const Navbar = () => {
     <section>
       <div className="w-full h-20 bg-visionBlue">
         <div className="flex h-full items-center justify-center sm:justify-between px-5">
-          <Image className="sm:w-[12%] w-[30%]" src={logo} alt="logo" />
+          <Image className="sm:w-[5%] w-[10%]" src={logo} alt="logo" />
           <div>
             <ul className="text-white sm:flex hidden items-center justify-center h-full gap-5 ">
               {menuItems.map((item, index) => (
